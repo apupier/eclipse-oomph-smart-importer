@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SmartImporter -->
+      <package
+            uri="http://www.eclipse.org/oomph/smart/importer/1.0"
+            class="org.eclipse.oomph.smart.importer.SmartImporterPackage"
+            genModel="model/SmartImporter.genmodel"/>
+   </extension>
+
+</plugin>
