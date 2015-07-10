@@ -150,7 +150,7 @@ public interface SmartImporterPackage extends EPackage
   int SMART_IMPORTER_TASK__RESTRICTIONS = SetupPackage.SETUP_TASK__RESTRICTIONS;
 
   /**
-   * The feature id for the '<em><b>Source Locators</b></em>' reference list.
+   * The feature id for the '<em><b>Source Locators</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -178,10 +178,10 @@ public interface SmartImporterPackage extends EPackage
   EClass getSmartImporterTask();
 
   /**
-   * Returns the meta object for the reference list '{@link org.eclipse.oomph.smart.importer.SmartImporterTask#getSourceLocators <em>Source Locators</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.oomph.smart.importer.SmartImporterTask#getSourceLocators <em>Source Locators</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Source Locators</em>'.
+   * @return the meta object for the containment reference list '<em>Source Locators</em>'.
    * @see org.eclipse.oomph.smart.importer.SmartImporterTask#getSourceLocators()
    * @see #getSmartImporterTask()
    * @generated
@@ -222,7 +222,7 @@ public interface SmartImporterPackage extends EPackage
     EClass SMART_IMPORTER_TASK = eINSTANCE.getSmartImporterTask();
 
     /**
-     * The meta object literal for the '<em><b>Source Locators</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Source Locators</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

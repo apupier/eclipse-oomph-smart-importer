@@ -36,7 +36,7 @@ public interface SmartImporterTask extends SetupTask
 {
 
   /**
-   * Returns the value of the '<em><b>Source Locators</b></em>' reference list.
+   * Returns the value of the '<em><b>Source Locators</b></em>' containment reference list.
    * The list contents are of type {@link org.eclipse.oomph.resources.SourceLocator}.
    * <!-- begin-user-doc -->
    * <p>
@@ -44,9 +44,10 @@ public interface SmartImporterTask extends SetupTask
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Source Locators</em>' reference list.
+   * @return the value of the '<em>Source Locators</em>' containment reference list.
    * @see org.eclipse.oomph.smart.importer.SmartImporterPackage#getSmartImporterTask_SourceLocators()
-   * @model required="true"
+   * @model containment="true" required="true"
+   *        extendedMetaData="name='sourceLocator'"
    * @generated
    */
   EList<SourceLocator> getSourceLocators();

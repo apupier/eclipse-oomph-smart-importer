@@ -16,9 +16,12 @@ import org.eclipse.oomph.setup.impl.SetupTaskImpl;
 import org.eclipse.oomph.smart.importer.SmartImporterPackage;
 import org.eclipse.oomph.smart.importer.SmartImporterTask;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.ui.IWorkingSet;
@@ -44,7 +47,7 @@ import java.util.Collections;
 public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporterTask
 {
   /**
-   * The cached value of the '{@link #getSourceLocators() <em>Source Locators</em>}' reference list.
+   * The cached value of the '{@link #getSourceLocators() <em>Source Locators</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSourceLocators()
@@ -85,9 +88,25 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     if (sourceLocators == null)
     {
-      sourceLocators = new EObjectResolvingEList<SourceLocator>(SourceLocator.class, this, SmartImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS);
+      sourceLocators = new EObjectContainmentEList<SourceLocator>(SourceLocator.class, this, SmartImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS);
     }
     return sourceLocators;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+    case SmartImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+      return ((InternalEList<?>)getSourceLocators()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**

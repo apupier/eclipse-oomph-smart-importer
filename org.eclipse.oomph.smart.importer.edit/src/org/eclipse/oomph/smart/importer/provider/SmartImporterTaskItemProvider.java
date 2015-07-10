@@ -10,14 +10,16 @@
  */
 package org.eclipse.oomph.smart.importer.provider;
 
+import org.eclipse.oomph.resources.ResourcesFactory;
 import org.eclipse.oomph.setup.provider.SetupTaskItemProvider;
 import org.eclipse.oomph.smart.importer.SmartImporterPackage;
 import org.eclipse.oomph.smart.importer.SmartImporterTask;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import java.util.Collection;
 import java.util.List;
@@ -54,23 +56,41 @@ public class SmartImporterTaskItemProvider extends SetupTaskItemProvider
     {
       super.getPropertyDescriptors(object);
 
-      addSourceLocatorsPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
 
   /**
-   * This adds a property descriptor for the Source Locators feature.
+   * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+   * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+   * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addSourceLocatorsPropertyDescriptor(Object object)
+  @Override
+  public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
   {
-    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_SmartImporterTask_sourceLocators_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_SmartImporterTask_sourceLocators_feature", "_UI_SmartImporterTask_type"),
-        SmartImporterPackage.Literals.SMART_IMPORTER_TASK__SOURCE_LOCATORS, true, false, true, null, null, null));
+    if (childrenFeatures == null)
+    {
+      super.getChildrenFeatures(object);
+      childrenFeatures.add(SmartImporterPackage.Literals.SMART_IMPORTER_TASK__SOURCE_LOCATORS);
+    }
+    return childrenFeatures;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EStructuralFeature getChildFeature(Object object, Object child)
+  {
+    // Check the type of the specified child object and return the proper feature to use for
+    // adding (see {@link AddCommand}) it as a child.
+
+    return super.getChildFeature(object, child);
   }
 
   /**
@@ -128,6 +148,13 @@ public class SmartImporterTaskItemProvider extends SetupTaskItemProvider
   public void notifyChanged(Notification notification)
   {
     updateChildren(notification);
+
+    switch (notification.getFeatureID(SmartImporterTask.class))
+    {
+    case SmartImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+      fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+      return;
+    }
     super.notifyChanged(notification);
   }
 
@@ -142,6 +169,9 @@ public class SmartImporterTaskItemProvider extends SetupTaskItemProvider
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
   {
     super.collectNewChildDescriptors(newChildDescriptors, object);
+
+    newChildDescriptors
+        .add(createChildParameter(SmartImporterPackage.Literals.SMART_IMPORTER_TASK__SOURCE_LOCATORS, ResourcesFactory.eINSTANCE.createSourceLocator()));
   }
 
 }

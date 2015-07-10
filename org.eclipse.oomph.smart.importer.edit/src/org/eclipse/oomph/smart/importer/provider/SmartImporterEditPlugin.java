@@ -3,12 +3,9 @@
 package org.eclipse.oomph.smart.importer.provider;
 
 import org.eclipse.oomph.base.provider.BaseEditPlugin;
-import org.eclipse.oomph.p2.provider.P2EditPlugin;
 import org.eclipse.oomph.predicates.provider.PredicatesEditPlugin;
 import org.eclipse.oomph.resources.provider.ResourcesEditPlugin;
 import org.eclipse.oomph.setup.provider.SetupEditPlugin;
-import org.eclipse.oomph.targlets.provider.TargletEditPlugin;
-import org.eclipse.oomph.workingsets.provider.WorkingSetsEditPlugin;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -45,8 +42,7 @@ public final class SmartImporterEditPlugin extends EMFPlugin
    */
   public SmartImporterEditPlugin()
   {
-    super(new ResourceLocator[] { BaseEditPlugin.INSTANCE, P2EditPlugin.INSTANCE, PredicatesEditPlugin.INSTANCE, ResourcesEditPlugin.INSTANCE,
-        SetupEditPlugin.INSTANCE, TargletEditPlugin.INSTANCE, WorkingSetsEditPlugin.INSTANCE, });
+    super(new ResourceLocator[] { BaseEditPlugin.INSTANCE, PredicatesEditPlugin.INSTANCE, ResourcesEditPlugin.INSTANCE, SetupEditPlugin.INSTANCE, });
   }
 
   /**
