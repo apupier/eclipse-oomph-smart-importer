@@ -1,6 +1,6 @@
 # eclipse-oomph-smart-importer
 
-The goal is to use the Eclipse Smart Importer [1] inside Eclipse Oomph [2]
+The goal is to use the [Eclipse Smart Importer](https://wiki.eclipse.org/E4/UI/Smart_Import) inside [Eclipse Oomph](https://projects.eclipse.org/projects/tools.oomph)
 
 To use it:
 
@@ -25,6 +25,3 @@ To use it:
      * the feature org.eclipse.oomph.smart.importer.feature.group from http://update-site.bonitasoft.com/oomph/
      * the feature org.eclipse.e4.ui.importer from http://download.eclipse.org/eclipse/updates/4.5
 
-References:
-[1] https://wiki.eclipse.org/E4/UI/Smart_Import
-[2] https://projects.eclipse.org/projects/tools.oomph
