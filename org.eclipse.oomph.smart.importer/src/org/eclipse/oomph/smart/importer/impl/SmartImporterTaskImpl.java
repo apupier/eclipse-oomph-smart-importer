@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 Eike Stepper (Berlin, Germany) and others.
+ * Copyright (c) 2014-2015 Eike Stepper (Berlin, Germany) and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  *
  * Contributors:
  *    Eike Stepper - initial API and implementation
+ *    Aurelien Pupier - implementation of perform method
  */
 package org.eclipse.oomph.smart.importer.impl;
 
@@ -185,7 +186,6 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
 
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
-    // TODO Implement SmartImporterTaskImpl.isNeeded()
     return true;
   }
 
@@ -199,7 +199,7 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
 
     for (SourceLocator sourceLocator : sourceLocators)
     {
-      new EasymportJob(new File(sourceLocator.getRootFolder()), Collections.<IWorkingSet> emptySet(), true).schedule();
+      new EasymportJob(new File(sourceLocator.getRootFolder()), Collections.<IWorkingSet> emptySet(), true, true).schedule();
     }
   }
 
