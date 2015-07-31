@@ -191,6 +191,7 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
 
   public void perform(SetupTaskContext context) throws Exception
   {
+    System.out.println("Starting smart import...");
     EList<SourceLocator> sourceLocators = getSourceLocators();
     int size = sourceLocators.size();
 
@@ -199,6 +200,7 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
 
     for (SourceLocator sourceLocator : sourceLocators)
     {
+      System.out.println("Smart import of folder: " + sourceLocator.getRootFolder());
       new EasymportJob(new File(sourceLocator.getRootFolder()), Collections.<IWorkingSet> emptySet(), true, true).schedule();
     }
   }
