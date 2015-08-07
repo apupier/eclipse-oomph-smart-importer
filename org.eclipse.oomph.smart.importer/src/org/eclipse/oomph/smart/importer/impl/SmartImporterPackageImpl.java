@@ -199,7 +199,7 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
-    createResource("http://www.eclipse.org/oomph/smart/importer/schemas/Importer-1.0.ecore");
+    createResource("https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/Importer-1.0.ecore");
 
     // Create annotations
     // http://www.eclipse.org/emf/2002/Ecore
@@ -221,7 +221,8 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
   protected void createEcoreAnnotations()
   {
     String source = "http://www.eclipse.org/emf/2002/Ecore";
-    addAnnotation(this, source, new String[] { "schemaLocation", "http://www.eclipse.org/oomph/smart/importer/schemas/Importer-1.0.ecore" });
+    addAnnotation(this, source, new String[] { "schemaLocation",
+        "https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/Importer-1.0.ecore" });
   }
 
   /**

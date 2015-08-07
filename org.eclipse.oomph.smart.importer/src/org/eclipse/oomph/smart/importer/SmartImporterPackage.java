@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.eclipse.oomph.smart.importer.SmartImporterFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='http://www.eclipse.org/oomph/smart/importer/schemas/Importer-1.0.ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/Importer-1.0.ecore'"
  * @generated
  */
 public interface SmartImporterPackage extends EPackage
