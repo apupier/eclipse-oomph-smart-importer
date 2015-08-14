@@ -1,16 +1,16 @@
 /**
  */
-package org.eclipse.oomph.smart.importer.impl;
-
-import org.eclipse.oomph.smart.importer.SmartImporterFactory;
-import org.eclipse.oomph.smart.importer.SmartImporterPackage;
-import org.eclipse.oomph.smart.importer.SmartImporterTask;
+package org.eclipse.oomph.smart.importer.importer.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import org.eclipse.oomph.smart.importer.importer.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SmartImporterFactoryImpl extends EFactoryImpl implements SmartImporterFactory
+public class ImporterFactoryImpl extends EFactoryImpl implements ImporterFactory
 {
   /**
    * Creates the default factory implementation.
@@ -26,21 +26,21 @@ public class SmartImporterFactoryImpl extends EFactoryImpl implements SmartImpor
    * <!-- end-user-doc -->
    * @generated
    */
-  public static SmartImporterFactory init()
+  public static ImporterFactory init()
   {
     try
     {
-      SmartImporterFactory theSmartImporterFactory = (SmartImporterFactory)EPackage.Registry.INSTANCE.getEFactory(SmartImporterPackage.eNS_URI);
-      if (theSmartImporterFactory != null)
+      ImporterFactory theImporterFactory = (ImporterFactory)EPackage.Registry.INSTANCE.getEFactory(ImporterPackage.eNS_URI);
+      if (theImporterFactory != null)
       {
-        return theSmartImporterFactory;
+        return theImporterFactory;
       }
     }
     catch (Exception exception)
     {
       EcorePlugin.INSTANCE.log(exception);
     }
-    return new SmartImporterFactoryImpl();
+    return new ImporterFactoryImpl();
   }
 
   /**
@@ -49,7 +49,7 @@ public class SmartImporterFactoryImpl extends EFactoryImpl implements SmartImpor
    * <!-- end-user-doc -->
    * @generated
    */
-  public SmartImporterFactoryImpl()
+  public ImporterFactoryImpl()
   {
     super();
   }
@@ -64,10 +64,9 @@ public class SmartImporterFactoryImpl extends EFactoryImpl implements SmartImpor
   {
     switch (eClass.getClassifierID())
     {
-    case SmartImporterPackage.SMART_IMPORTER_TASK:
-      return createSmartImporterTask();
-    default:
-      throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+      case ImporterPackage.SMART_IMPORTER_TASK: return createSmartImporterTask();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
   }
 
@@ -87,9 +86,9 @@ public class SmartImporterFactoryImpl extends EFactoryImpl implements SmartImpor
    * <!-- end-user-doc -->
    * @generated
    */
-  public SmartImporterPackage getSmartImporterPackage()
+  public ImporterPackage getImporterPackage()
   {
-    return (SmartImporterPackage)getEPackage();
+    return (ImporterPackage)getEPackage();
   }
 
   /**
@@ -99,9 +98,9 @@ public class SmartImporterFactoryImpl extends EFactoryImpl implements SmartImpor
    * @generated
    */
   @Deprecated
-  public static SmartImporterPackage getPackage()
+  public static ImporterPackage getPackage()
   {
-    return SmartImporterPackage.eINSTANCE;
+    return ImporterPackage.eINSTANCE;
   }
 
-} // SmartImporterFactoryImpl
+} //ImporterFactoryImpl

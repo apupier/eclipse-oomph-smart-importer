@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.oomph.smart.importer/src" modelPluginID="org.eclipse.oomph.smart.importer"
+    modelName="SmartImporter" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.oomph.base/model/Base.genmodel#//base ../../org.eclipse.oomph.predicates/model/Predicates.genmodel#//predicates ../../org.eclipse.oomph.resources/model/Resources.genmodel#//resources ../../org.eclipse.oomph.setup/model/Setup.genmodel#//setup"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SmartImporter.ecore</foreignModel>
+  <genPackages prefix="Importer" disposableProviderFactory="true" ecorePackage="SmartImporter.ecore#/">
+    <genClasses ecoreClass="SmartImporter.ecore#//SmartImporterTask"/>
+  </genPackages>
+  <genPackages prefix="Setup" ecorePackage="http://www.eclipse.org/oomph/setup/1.0#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/oomph/setup/1.0#//ScopeType">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//ScopeType/None"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//ScopeType/ProductCatalog"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//ScopeType/Product"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//ScopeType/ProductVersion"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//ScopeType/ProjectCatalog"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//ScopeType/Project"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//ScopeType/Stream"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//ScopeType/Installation"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//ScopeType/Workspace"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//ScopeType/User"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/oomph/setup/1.0#//Trigger">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//Trigger/BOOTSTRAP"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//Trigger/STARTUP"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//Trigger/MANUAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/oomph/setup/1.0#//VariableType">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/TEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/PASSWORD"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/PATTERN"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/URI"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/FILE"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/FOLDER"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/RESOURCE"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/CONTAINER"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/PROJECT"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//VariableType/JRE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="http://www.eclipse.org/oomph/setup/1.0#//UnsignedPolicy">
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//UnsignedPolicy/PROMPT"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//UnsignedPolicy/ACCEPT"/>
+      <genEnumLiterals ecoreEnumLiteral="http://www.eclipse.org/oomph/setup/1.0#//UnsignedPolicy/DECLINE"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="http://www.eclipse.org/oomph/setup/1.0#//TriggerSet"/>
+    <genDataTypes ecoreDataType="http://www.eclipse.org/oomph/setup/1.0#//LicenseInfo"/>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//SetupTask/iD"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//SetupTask/description"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//SetupTask/scopeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//SetupTask/excludedTriggers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//SetupTask/disabled"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//SetupTask/predecessors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//SetupTask/successors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//SetupTask/restrictions"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/oomph/setup/1.0#//SetupTask/getScope"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/oomph/setup/1.0#//SetupTask/requires">
+        <genParameters ecoreParameter="http://www.eclipse.org/oomph/setup/1.0#//SetupTask/requires/setupTask"/>
+      </genOperations>
+      <genOperations ecoreOperation="http://www.eclipse.org/oomph/setup/1.0#//SetupTask/getValidTriggers"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/oomph/setup/1.0#//SetupTask/getTriggers"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//SetupTaskContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//SetupTaskContainer/setupTasks"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//Scope">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//Scope/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//Scope/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//Scope/description"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//Scope/qualifiedName"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/oomph/setup/1.0#//Scope/getParentScope"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/oomph/setup/1.0#//Scope/getType"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//Index">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Index/discoverablePackages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Index/productCatalogs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Index/projectCatalogs"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//CatalogSelection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//CatalogSelection/productCatalogs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//CatalogSelection/projectCatalogs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//CatalogSelection/defaultProductVersions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//CatalogSelection/defaultStreams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//CatalogSelection/selectedStreams"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//ProductCatalog">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//ProductCatalog/index"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//ProductCatalog/products"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//Product">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Product/productCatalog"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Product/versions"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//ProductVersion">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//ProductVersion/product"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//ProductVersion/requiredJavaVersion"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//ProjectContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//ProjectContainer/projects"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/oomph/setup/1.0#//ProjectContainer/getProjectContainer"/>
+      <genOperations ecoreOperation="http://www.eclipse.org/oomph/setup/1.0#//ProjectContainer/getProjectCatalog"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//ProjectCatalog">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//ProjectCatalog/index"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//Project">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Project/streams"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Project/projectContainer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Project/logicalProjectContainer"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Project/parentProject"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Project/projectCatalog"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//Stream">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Stream/project"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//User">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//User/attributeRules"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//User/acceptedLicenses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//User/unsignedPolicy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//User/questionnaireDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//User/preferenceRecorderDefault"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//AttributeRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//AttributeRule/attributeURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//AttributeRule/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//LocationCatalog">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//LocationCatalog/installations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//LocationCatalog/workspaces"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//Installation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Installation/productVersion"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//InstallationTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//InstallationTask/location"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//Workspace">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//Workspace/streams"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//WorkspaceTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//WorkspaceTask/location"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//CompoundTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//CompoundTask/name"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//VariableTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//VariableTask/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//VariableTask/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//VariableTask/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//VariableTask/defaultValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//VariableTask/storePromptedValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//VariableTask/storageURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//VariableTask/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//VariableTask/choices"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//VariableChoice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//VariableChoice/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//VariableChoice/label"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//StringSubstitutionTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//StringSubstitutionTask/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//StringSubstitutionTask/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//RedirectionTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//RedirectionTask/sourceURL"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//RedirectionTask/targetURL"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//EclipseIniTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//EclipseIniTask/option"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//EclipseIniTask/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//EclipseIniTask/vm"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//LinkLocationTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//LinkLocationTask/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//LinkLocationTask/name"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//PreferenceTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//PreferenceTask/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//PreferenceTask/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//ResourceCopyTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//ResourceCopyTask/sourceURL"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//ResourceCopyTask/targetURL"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//ResourceCreationTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//ResourceCreationTask/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//ResourceCreationTask/targetURL"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//ResourceCreationTask/encoding"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//TextModifyTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//TextModifyTask/uRL"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//TextModifyTask/modifications"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//TextModifyTask/encoding"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//TextModification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//TextModification/pattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//TextModification/substitutions"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//ProductToProductVersionMapEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//ProductToProductVersionMapEntry/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//ProductToProductVersionMapEntry/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//ProjectToStreamMapEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//ProjectToStreamMapEntry/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//ProjectToStreamMapEntry/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://www.eclipse.org/oomph/setup/1.0#//ProjectToStreamMapEntry/selection"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//InstallationToWorkspacesMapEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//InstallationToWorkspacesMapEntry/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//InstallationToWorkspacesMapEntry/value"/>
+    </genClasses>
+    <genClasses ecoreClass="http://www.eclipse.org/oomph/setup/1.0#//WorkspaceToInstallationsMapEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//WorkspaceToInstallationsMapEntry/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://www.eclipse.org/oomph/setup/1.0#//WorkspaceToInstallationsMapEntry/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

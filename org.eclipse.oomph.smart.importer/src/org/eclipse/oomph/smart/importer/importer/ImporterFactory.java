@@ -1,6 +1,6 @@
 /**
  */
-package org.eclipse.oomph.smart.importer;
+package org.eclipse.oomph.smart.importer.importer;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,10 +9,10 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see org.eclipse.oomph.smart.importer.SmartImporterPackage
+ * @see org.eclipse.oomph.smart.importer.importer.ImporterPackage
  * @generated
  */
-public interface SmartImporterFactory extends EFactory
+public interface ImporterFactory extends EFactory
 {
   /**
    * The singleton instance of the factory.
@@ -20,13 +20,13 @@ public interface SmartImporterFactory extends EFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  SmartImporterFactory eINSTANCE = org.eclipse.oomph.smart.importer.impl.SmartImporterFactoryImpl.init();
+  ImporterFactory eINSTANCE = org.eclipse.oomph.smart.importer.importer.impl.ImporterFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Task</em>'.
+   * Returns a new object of class '<em>Smart Importer Task</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Task</em>'.
+   * @return a new object of class '<em>Smart Importer Task</em>'.
    * @generated
    */
   SmartImporterTask createSmartImporterTask();
@@ -38,6 +38,6 @@ public interface SmartImporterFactory extends EFactory
    * @return the package supported by this factory.
    * @generated
    */
-  SmartImporterPackage getSmartImporterPackage();
+  ImporterPackage getImporterPackage();
 
-} // SmartImporterFactory
+} //ImporterFactory

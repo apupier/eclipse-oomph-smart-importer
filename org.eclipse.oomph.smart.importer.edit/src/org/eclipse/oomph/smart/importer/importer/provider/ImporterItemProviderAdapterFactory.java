@@ -1,26 +1,24 @@
 /**
  */
-package org.eclipse.oomph.smart.importer.provider;
+package org.eclipse.oomph.smart.importer.importer.provider;
 
-import org.eclipse.oomph.base.Annotation;
-import org.eclipse.oomph.base.BasePackage;
-import org.eclipse.oomph.base.util.BaseSwitch;
-import org.eclipse.oomph.setup.SetupPackage;
-import org.eclipse.oomph.setup.SetupTaskContainer;
-import org.eclipse.oomph.setup.util.SetupSwitch;
-import org.eclipse.oomph.smart.importer.SmartImporterFactory;
-import org.eclipse.oomph.smart.importer.SmartImporterPackage;
-import org.eclipse.oomph.smart.importer.util.SmartImporterAdapterFactory;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.edit.command.CommandParameter;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
-import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
@@ -33,9 +31,19 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import org.eclipse.oomph.base.Annotation;
+import org.eclipse.oomph.base.BasePackage;
+
+import org.eclipse.oomph.base.util.BaseSwitch;
+
+import org.eclipse.oomph.setup.SetupPackage;
+import org.eclipse.oomph.setup.SetupTaskContainer;
+
+import org.eclipse.oomph.setup.util.SetupSwitch;
+
+import org.eclipse.oomph.smart.importer.importer.ImporterFactory;
+
+import org.eclipse.oomph.smart.importer.importer.util.ImporterAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -46,8 +54,7 @@ import java.util.List;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapterFactory
-    implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender
+public class ImporterItemProviderAdapterFactory extends ImporterAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable
 {
   /**
    * This keeps track of the root adapter factory that delegates to this adapter factory.
@@ -66,15 +73,6 @@ public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapte
   protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
   /**
-   * This helps manage the child creation extenders.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(SmartImporterEditPlugin.INSTANCE,
-      SmartImporterPackage.eNS_URI);
-
-  /**
    * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -88,7 +86,7 @@ public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapte
    * <!-- end-user-doc -->
    * @generated
    */
-  public SmartImporterItemProviderAdapterFactory()
+  public ImporterItemProviderAdapterFactory()
   {
     supportedTypes.add(IEditingDomainItemProvider.class);
     supportedTypes.add(IStructuredItemContentProvider.class);
@@ -98,7 +96,7 @@ public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapte
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link org.eclipse.oomph.smart.importer.SmartImporterTask} instances.
+   * This keeps track of the one adapter used for all {@link org.eclipse.oomph.smart.importer.importer.SmartImporterTask} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -106,7 +104,7 @@ public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapte
   protected SmartImporterTaskItemProvider smartImporterTaskItemProvider;
 
   /**
-   * This creates an adapter for a {@link org.eclipse.oomph.smart.importer.SmartImporterTask}.
+   * This creates an adapter for a {@link org.eclipse.oomph.smart.importer.importer.SmartImporterTask}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -178,43 +176,13 @@ public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapte
     if (isFactoryForType(type))
     {
       Object adapter = super.adapt(object, type);
-      if (!(type instanceof Class<?>) || ((Class<?>)type).isInstance(adapter))
+      if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
       {
         return adapter;
       }
     }
 
     return null;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public List<IChildCreationExtender> getChildCreationExtenders()
-  {
-    return childCreationExtenderManager.getChildCreationExtenders();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain)
-  {
-    return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ResourceLocator getResourceLocator()
-  {
-    return childCreationExtenderManager;
   }
 
   /**
@@ -256,17 +224,14 @@ public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapte
   }
 
   /**
-   * This disposes all of the item providers created by this factory.
+   * This disposes all of the item providers created by this factory. 
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   public void dispose()
   {
-    if (smartImporterTaskItemProvider != null)
-    {
-      smartImporterTaskItemProvider.dispose();
-    }
+    if (smartImporterTaskItemProvider != null) smartImporterTaskItemProvider.dispose();
   }
 
   /**
@@ -307,12 +272,11 @@ public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapte
        * <!-- end-user-doc -->
        * @generated
        */
-      CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain)
+      CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) 
       {
         this.newChildDescriptors = newChildDescriptors;
         this.editingDomain = editingDomain;
       }
-
       /**
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
@@ -321,11 +285,14 @@ public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapte
       @Override
       public Object caseAnnotation(Annotation object)
       {
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, SmartImporterFactory.eINSTANCE.createSmartImporterTask()));
+        newChildDescriptors.add
+          (createChildParameter
+            (BasePackage.Literals.ANNOTATION__CONTENTS,
+             ImporterFactory.eINSTANCE.createSmartImporterTask()));
 
         return null;
       }
-
+ 
       /**
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
@@ -399,12 +366,11 @@ public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapte
        * <!-- end-user-doc -->
        * @generated
        */
-      CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain)
+      CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) 
       {
         this.newChildDescriptors = newChildDescriptors;
         this.editingDomain = editingDomain;
       }
-
       /**
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->
@@ -413,12 +379,14 @@ public class SmartImporterItemProviderAdapterFactory extends SmartImporterAdapte
       @Override
       public Object caseSetupTaskContainer(SetupTaskContainer object)
       {
-        newChildDescriptors
-            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, SmartImporterFactory.eINSTANCE.createSmartImporterTask()));
+        newChildDescriptors.add
+          (createChildParameter
+            (SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS,
+             ImporterFactory.eINSTANCE.createSmartImporterTask()));
 
         return null;
       }
-
+ 
       /**
        * <!-- begin-user-doc -->
        * <!-- end-user-doc -->

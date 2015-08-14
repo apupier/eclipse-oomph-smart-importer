@@ -1,26 +1,29 @@
 /**
  */
-package org.eclipse.oomph.smart.importer.util;
-
-import org.eclipse.oomph.base.ModelElement;
-import org.eclipse.oomph.setup.SetupTask;
-import org.eclipse.oomph.smart.importer.SmartImporterPackage;
-import org.eclipse.oomph.smart.importer.SmartImporterTask;
+package org.eclipse.oomph.smart.importer.importer.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.oomph.base.ModelElement;
+
+import org.eclipse.oomph.setup.SetupTask;
+
+import org.eclipse.oomph.smart.importer.importer.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see org.eclipse.oomph.smart.importer.SmartImporterPackage
+ * @see org.eclipse.oomph.smart.importer.importer.ImporterPackage
  * @generated
  */
-public class SmartImporterAdapterFactory extends AdapterFactoryImpl
+public class ImporterAdapterFactory extends AdapterFactoryImpl
 {
   /**
    * The cached model package.
@@ -28,7 +31,7 @@ public class SmartImporterAdapterFactory extends AdapterFactoryImpl
    * <!-- end-user-doc -->
    * @generated
    */
-  protected static SmartImporterPackage modelPackage;
+  protected static ImporterPackage modelPackage;
 
   /**
    * Creates an instance of the adapter factory.
@@ -36,11 +39,11 @@ public class SmartImporterAdapterFactory extends AdapterFactoryImpl
    * <!-- end-user-doc -->
    * @generated
    */
-  public SmartImporterAdapterFactory()
+  public ImporterAdapterFactory()
   {
     if (modelPackage == null)
     {
-      modelPackage = SmartImporterPackage.eINSTANCE;
+      modelPackage = ImporterPackage.eINSTANCE;
     }
   }
 
@@ -72,32 +75,30 @@ public class SmartImporterAdapterFactory extends AdapterFactoryImpl
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SmartImporterSwitch<Adapter> modelSwitch = new SmartImporterSwitch<Adapter>()
-  {
-    @Override
-    public Adapter caseSmartImporterTask(SmartImporterTask object)
+  protected ImporterSwitch<Adapter> modelSwitch =
+    new ImporterSwitch<Adapter>()
     {
-      return createSmartImporterTaskAdapter();
-    }
-
-    @Override
-    public Adapter caseModelElement(ModelElement object)
-    {
-      return createModelElementAdapter();
-    }
-
-    @Override
-    public Adapter caseSetupTask(SetupTask object)
-    {
-      return createSetupTaskAdapter();
-    }
-
-    @Override
-    public Adapter defaultCase(EObject object)
-    {
-      return createEObjectAdapter();
-    }
-  };
+      @Override
+      public Adapter caseSmartImporterTask(SmartImporterTask object)
+      {
+        return createSmartImporterTaskAdapter();
+      }
+      @Override
+      public Adapter caseModelElement(ModelElement object)
+      {
+        return createModelElementAdapter();
+      }
+      @Override
+      public Adapter caseSetupTask(SetupTask object)
+      {
+        return createSetupTaskAdapter();
+      }
+      @Override
+      public Adapter defaultCase(EObject object)
+      {
+        return createEObjectAdapter();
+      }
+    };
 
   /**
    * Creates an adapter for the <code>target</code>.
@@ -113,14 +114,15 @@ public class SmartImporterAdapterFactory extends AdapterFactoryImpl
     return modelSwitch.doSwitch((EObject)target);
   }
 
+
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.oomph.smart.importer.SmartImporterTask <em>Task</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.oomph.smart.importer.importer.SmartImporterTask <em>Smart Importer Task</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.oomph.smart.importer.SmartImporterTask
+   * @see org.eclipse.oomph.smart.importer.importer.SmartImporterTask
    * @generated
    */
   public Adapter createSmartImporterTaskAdapter()
@@ -171,4 +173,4 @@ public class SmartImporterAdapterFactory extends AdapterFactoryImpl
     return null;
   }
 
-} // SmartImporterAdapterFactory
+} //ImporterAdapterFactory

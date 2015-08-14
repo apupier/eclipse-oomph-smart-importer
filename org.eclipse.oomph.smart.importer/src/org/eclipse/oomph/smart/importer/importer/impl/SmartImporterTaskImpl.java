@@ -1,21 +1,12 @@
-/*
- * Copyright (c) 2014-2015 Eike Stepper (Berlin, Germany) and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *    Eike Stepper - initial API and implementation
- *    Aurelien Pupier - implementation of perform method
+/**
  */
-package org.eclipse.oomph.smart.importer.impl;
+package org.eclipse.oomph.smart.importer.importer.impl;
 
 import org.eclipse.oomph.resources.SourceLocator;
 import org.eclipse.oomph.setup.SetupTaskContext;
 import org.eclipse.oomph.setup.impl.SetupTaskImpl;
-import org.eclipse.oomph.smart.importer.SmartImporterPackage;
-import org.eclipse.oomph.smart.importer.SmartImporterTask;
+import org.eclipse.oomph.smart.importer.importer.ImporterPackage;
+import org.eclipse.oomph.smart.importer.importer.SmartImporterTask;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -40,7 +31,7 @@ import java.util.Collections;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.oomph.smart.importer.impl.SmartImporterTaskImpl#getSourceLocators <em>Source Locators</em>}</li>
+ *   <li>{@link org.eclipse.oomph.smart.importer.importer.impl.SmartImporterTaskImpl#getSourceLocators <em>Source Locators</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,8 +47,6 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
    * @ordered
    */
   protected EList<SourceLocator> sourceLocators;
-
-  private static final int PRIORITY = PRIORITY_DEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -77,7 +66,7 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   @Override
   protected EClass eStaticClass()
   {
-    return SmartImporterPackage.Literals.SMART_IMPORTER_TASK;
+    return ImporterPackage.Literals.SMART_IMPORTER_TASK;
   }
 
   /**
@@ -89,7 +78,7 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     if (sourceLocators == null)
     {
-      sourceLocators = new EObjectContainmentEList<SourceLocator>(SourceLocator.class, this, SmartImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS);
+      sourceLocators = new EObjectContainmentEList<SourceLocator>(SourceLocator.class, this, ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS);
     }
     return sourceLocators;
   }
@@ -104,7 +93,7 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     switch (featureID)
     {
-    case SmartImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+    case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
       return ((InternalEList<?>)getSourceLocators()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -120,7 +109,7 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     switch (featureID)
     {
-    case SmartImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+    case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
       return getSourceLocators();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -137,7 +126,7 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     switch (featureID)
     {
-    case SmartImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+    case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
       getSourceLocators().clear();
       getSourceLocators().addAll((Collection<? extends SourceLocator>)newValue);
       return;
@@ -155,7 +144,7 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     switch (featureID)
     {
-    case SmartImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+    case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
       getSourceLocators().clear();
       return;
     }
@@ -172,23 +161,25 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     switch (featureID)
     {
-    case SmartImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+    case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
       return sourceLocators != null && !sourceLocators.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-  @Override
-  public int getPriority()
-  {
-    return PRIORITY;
-  }
-
+  /*
+   * (non-Javadoc)
+   * @see org.eclipse.oomph.setup.SetupTask#isNeeded(org.eclipse.oomph.setup.SetupTaskContext)
+   */
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
     return true;
   }
 
+  /*
+   * (non-Javadoc)
+   * @see org.eclipse.oomph.setup.SetupTask#perform(org.eclipse.oomph.setup.SetupTaskContext)
+   */
   public void perform(SetupTaskContext context) throws Exception
   {
     System.out.println("Starting smart import...");
@@ -203,6 +194,7 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
       System.out.println("Smart import of folder: " + sourceLocator.getRootFolder());
       new EasymportJob(new File(sourceLocator.getRootFolder()), Collections.<IWorkingSet> emptySet(), true, true).schedule();
     }
+
   }
 
 } // SmartImporterTaskImpl

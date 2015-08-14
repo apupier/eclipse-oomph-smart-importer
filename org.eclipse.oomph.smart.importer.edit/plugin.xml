@@ -10,7 +10,7 @@
       <!-- @generated SmartImporter -->
       <factory
             uri="http://www.eclipse.org/oomph/smart/importer/1.0"
-            class="org.eclipse.oomph.smart.importer.provider.SmartImporterItemProviderAdapterFactory"
+            class="org.eclipse.oomph.smart.importer.importer.provider.ImporterItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -23,10 +23,10 @@
       <!-- @generated SmartImporter -->
       <extender
             uri="http://www.eclipse.org/oomph/base/1.0"
-            class="org.eclipse.oomph.smart.importer.provider.SmartImporterItemProviderAdapterFactory$BaseChildCreationExtender"/>
+            class="org.eclipse.oomph.smart.importer.importer.provider.ImporterItemProviderAdapterFactory$BaseChildCreationExtender"/>
       <extender
             uri="http://www.eclipse.org/oomph/setup/1.0"
-            class="org.eclipse.oomph.smart.importer.provider.SmartImporterItemProviderAdapterFactory$SetupChildCreationExtender"/>
+            class="org.eclipse.oomph.smart.importer.importer.provider.ImporterItemProviderAdapterFactory$SetupChildCreationExtender"/>
    </extension>
 
 </plugin>

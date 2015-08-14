@@ -1,14 +1,18 @@
 /**
  */
-package org.eclipse.oomph.smart.importer.provider;
-
-import org.eclipse.oomph.base.provider.BaseEditPlugin;
-import org.eclipse.oomph.predicates.provider.PredicatesEditPlugin;
-import org.eclipse.oomph.resources.provider.ResourcesEditPlugin;
-import org.eclipse.oomph.setup.provider.SetupEditPlugin;
+package org.eclipse.oomph.smart.importer.importer.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.oomph.base.provider.BaseEditPlugin;
+
+import org.eclipse.oomph.predicates.provider.PredicatesEditPlugin;
+
+import org.eclipse.oomph.resources.provider.ResourcesEditPlugin;
+
+import org.eclipse.oomph.setup.provider.SetupEditPlugin;
 
 /**
  * This is the central singleton for the SmartImporter edit plugin.
@@ -42,7 +46,14 @@ public final class SmartImporterEditPlugin extends EMFPlugin
    */
   public SmartImporterEditPlugin()
   {
-    super(new ResourceLocator[] { BaseEditPlugin.INSTANCE, PredicatesEditPlugin.INSTANCE, ResourcesEditPlugin.INSTANCE, SetupEditPlugin.INSTANCE, });
+    super
+      (new ResourceLocator [] 
+       {
+         BaseEditPlugin.INSTANCE,
+         PredicatesEditPlugin.INSTANCE,
+         ResourcesEditPlugin.INSTANCE,
+         SetupEditPlugin.INSTANCE,
+       });
   }
 
   /**

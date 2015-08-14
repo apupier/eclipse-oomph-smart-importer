@@ -1,6 +1,6 @@
 /**
  */
-package org.eclipse.oomph.smart.importer;
+package org.eclipse.oomph.smart.importer.importer;
 
 import org.eclipse.oomph.setup.SetupPackage;
 
@@ -15,16 +15,21 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see org.eclipse.oomph.smart.importer.SmartImporterFactory
+ * @see org.eclipse.oomph.smart.importer.importer.ImporterFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/Importer-1.0.ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/SmartImporter.ecore'"
+ *        annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.smart.importer' repository='http://update-site.bonitasoft.com/oomph/' installableUnits='org.eclipse.oomph.smart.importer.feature.group'"
+ *        annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='setup.projectset.p2' repository='http://update-site.bonitasoft.com/oomph/' installableUnits='org.eclipse.oomph.smart.importer.feature.group'"
+ *        annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='setup.projectset.p2' repository='http://download.eclipse.org/e4/snapshots/org.eclipse.e4.ui' installableUnits='org.eclipse.e4.ui.importer org.eclipse.e4.ui.importer.java'"
+ *        annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='setup.projectset.p2' repository='http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-playground_master/' installableUnits='org.jboss.tools.playground.easymport.maven'"
  * @generated
  */
-public interface SmartImporterPackage extends EPackage
+public interface ImporterPackage extends EPackage
 {
   /**
    * The package name.
@@ -48,7 +53,7 @@ public interface SmartImporterPackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  String eNS_PREFIX = "importer";
+  String eNS_PREFIX = "org.eclipse.oomph.smart.importer";
 
   /**
    * The singleton instance of the package.
@@ -56,14 +61,14 @@ public interface SmartImporterPackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  SmartImporterPackage eINSTANCE = org.eclipse.oomph.smart.importer.impl.SmartImporterPackageImpl.init();
+  ImporterPackage eINSTANCE = org.eclipse.oomph.smart.importer.importer.impl.ImporterPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.eclipse.oomph.smart.importer.impl.SmartImporterTaskImpl <em>Task</em>}' class.
+   * The meta object id for the '{@link org.eclipse.oomph.smart.importer.importer.impl.SmartImporterTaskImpl <em>Smart Importer Task</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.eclipse.oomph.smart.importer.impl.SmartImporterTaskImpl
-   * @see org.eclipse.oomph.smart.importer.impl.SmartImporterPackageImpl#getSmartImporterTask()
+   * @see org.eclipse.oomph.smart.importer.importer.impl.SmartImporterTaskImpl
+   * @see org.eclipse.oomph.smart.importer.importer.impl.ImporterPackageImpl#getSmartImporterTask()
    * @generated
    */
   int SMART_IMPORTER_TASK = 0;
@@ -159,7 +164,7 @@ public interface SmartImporterPackage extends EPackage
   int SMART_IMPORTER_TASK__SOURCE_LOCATORS = SetupPackage.SETUP_TASK_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Task</em>' class.
+   * The number of structural features of the '<em>Smart Importer Task</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -168,21 +173,21 @@ public interface SmartImporterPackage extends EPackage
   int SMART_IMPORTER_TASK_FEATURE_COUNT = SetupPackage.SETUP_TASK_FEATURE_COUNT + 1;
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.oomph.smart.importer.SmartImporterTask <em>Task</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.oomph.smart.importer.importer.SmartImporterTask <em>Smart Importer Task</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Task</em>'.
-   * @see org.eclipse.oomph.smart.importer.SmartImporterTask
+   * @return the meta object for class '<em>Smart Importer Task</em>'.
+   * @see org.eclipse.oomph.smart.importer.importer.SmartImporterTask
    * @generated
    */
   EClass getSmartImporterTask();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.oomph.smart.importer.SmartImporterTask#getSourceLocators <em>Source Locators</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.oomph.smart.importer.importer.SmartImporterTask#getSourceLocators <em>Source Locators</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Source Locators</em>'.
-   * @see org.eclipse.oomph.smart.importer.SmartImporterTask#getSourceLocators()
+   * @see org.eclipse.oomph.smart.importer.importer.SmartImporterTask#getSourceLocators()
    * @see #getSmartImporterTask()
    * @generated
    */
@@ -195,7 +200,7 @@ public interface SmartImporterPackage extends EPackage
    * @return the factory that creates the instances of the model.
    * @generated
    */
-  SmartImporterFactory getSmartImporterFactory();
+  ImporterFactory getImporterFactory();
 
   /**
    * <!-- begin-user-doc -->
@@ -203,6 +208,7 @@ public interface SmartImporterPackage extends EPackage
    * <ul>
    *   <li>each class,</li>
    *   <li>each feature of each class,</li>
+   *   <li>each operation of each class,</li>
    *   <li>each enum,</li>
    *   <li>and each data type</li>
    * </ul>
@@ -212,11 +218,11 @@ public interface SmartImporterPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.eclipse.oomph.smart.importer.impl.SmartImporterTaskImpl <em>Task</em>}' class.
+     * The meta object literal for the '{@link org.eclipse.oomph.smart.importer.importer.impl.SmartImporterTaskImpl <em>Smart Importer Task</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.eclipse.oomph.smart.importer.impl.SmartImporterTaskImpl
-     * @see org.eclipse.oomph.smart.importer.impl.SmartImporterPackageImpl#getSmartImporterTask()
+     * @see org.eclipse.oomph.smart.importer.importer.impl.SmartImporterTaskImpl
+     * @see org.eclipse.oomph.smart.importer.importer.impl.ImporterPackageImpl#getSmartImporterTask()
      * @generated
      */
     EClass SMART_IMPORTER_TASK = eINSTANCE.getSmartImporterTask();
@@ -231,4 +237,4 @@ public interface SmartImporterPackage extends EPackage
 
   }
 
-} // SmartImporterPackage
+} // ImporterPackage

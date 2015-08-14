@@ -10,7 +10,7 @@
       <!-- @generated SmartImporter -->
       <package
             uri="http://www.eclipse.org/oomph/smart/importer/1.0"
-            class="org.eclipse.oomph.smart.importer.SmartImporterPackage"
+            class="org.eclipse.oomph.smart.importer.importer.ImporterPackage"
             genModel="model/SmartImporter.genmodel"/>
    </extension>
 

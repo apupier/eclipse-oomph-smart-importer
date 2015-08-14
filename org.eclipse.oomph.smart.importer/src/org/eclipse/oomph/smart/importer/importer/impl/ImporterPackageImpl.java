@@ -1,17 +1,20 @@
 /**
  */
-package org.eclipse.oomph.smart.importer.impl;
-
-import org.eclipse.oomph.resources.ResourcesPackage;
-import org.eclipse.oomph.setup.SetupPackage;
-import org.eclipse.oomph.smart.importer.SmartImporterFactory;
-import org.eclipse.oomph.smart.importer.SmartImporterPackage;
-import org.eclipse.oomph.smart.importer.SmartImporterTask;
+package org.eclipse.oomph.smart.importer.importer.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.oomph.resources.ResourcesPackage;
+
+import org.eclipse.oomph.setup.SetupPackage;
+
+import org.eclipse.oomph.smart.importer.importer.ImporterFactory;
+import org.eclipse.oomph.smart.importer.importer.ImporterPackage;
+import org.eclipse.oomph.smart.importer.importer.SmartImporterTask;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +22,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SmartImporterPackageImpl extends EPackageImpl implements SmartImporterPackage
+public class ImporterPackageImpl extends EPackageImpl implements ImporterPackage
 {
   /**
    * <!-- begin-user-doc -->
@@ -39,13 +42,13 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.EPackage.Registry
-   * @see org.eclipse.oomph.smart.importer.SmartImporterPackage#eNS_URI
+   * @see org.eclipse.oomph.smart.importer.importer.ImporterPackage#eNS_URI
    * @see #init()
    * @generated
    */
-  private SmartImporterPackageImpl()
+  private ImporterPackageImpl()
   {
-    super(eNS_URI, SmartImporterFactory.eINSTANCE);
+    super(eNS_URI, ImporterFactory.eINSTANCE);
   }
 
   /**
@@ -57,8 +60,8 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
 
   /**
    * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-   *
-   * <p>This method is used to initialize {@link SmartImporterPackage#eINSTANCE} when that field is accessed.
+   * 
+   * <p>This method is used to initialize {@link ImporterPackage#eINSTANCE} when that field is accessed.
    * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -67,16 +70,12 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
    * @see #initializePackageContents()
    * @generated
    */
-  public static SmartImporterPackage init()
+  public static ImporterPackage init()
   {
-    if (isInited)
-    {
-      return (SmartImporterPackage)EPackage.Registry.INSTANCE.getEPackage(SmartImporterPackage.eNS_URI);
-    }
+    if (isInited) return (ImporterPackage)EPackage.Registry.INSTANCE.getEPackage(ImporterPackage.eNS_URI);
 
     // Obtain or create and register package
-    SmartImporterPackageImpl theSmartImporterPackage = (SmartImporterPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SmartImporterPackageImpl
-        ? EPackage.Registry.INSTANCE.get(eNS_URI) : new SmartImporterPackageImpl());
+    ImporterPackageImpl theImporterPackage = (ImporterPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ImporterPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ImporterPackageImpl());
 
     isInited = true;
 
@@ -85,17 +84,18 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
     SetupPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
-    theSmartImporterPackage.createPackageContents();
+    theImporterPackage.createPackageContents();
 
     // Initialize created meta-data
-    theSmartImporterPackage.initializePackageContents();
+    theImporterPackage.initializePackageContents();
 
     // Mark meta-data to indicate it can't be changed
-    theSmartImporterPackage.freeze();
+    theImporterPackage.freeze();
 
+  
     // Update the registry and return the package
-    EPackage.Registry.INSTANCE.put(SmartImporterPackage.eNS_URI, theSmartImporterPackage);
-    return theSmartImporterPackage;
+    EPackage.Registry.INSTANCE.put(ImporterPackage.eNS_URI, theImporterPackage);
+    return theImporterPackage;
   }
 
   /**
@@ -123,9 +123,9 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
    * <!-- end-user-doc -->
    * @generated
    */
-  public SmartImporterFactory getSmartImporterFactory()
+  public ImporterFactory getImporterFactory()
   {
-    return (SmartImporterFactory)getEFactoryInstance();
+    return (ImporterFactory)getEFactoryInstance();
   }
 
   /**
@@ -144,10 +144,7 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
    */
   public void createPackageContents()
   {
-    if (isCreated)
-    {
-      return;
-    }
+    if (isCreated) return;
     isCreated = true;
 
     // Create classes and their features
@@ -171,10 +168,7 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
    */
   public void initializePackageContents()
   {
-    if (isInitialized)
-    {
-      return;
-    }
+    if (isInitialized) return;
     isInitialized = true;
 
     // Initialize package
@@ -193,13 +187,12 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
     // Add supertypes to classes
     smartImporterTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
 
-    // Initialize classes and features; add operations and parameters
+    // Initialize classes, features, and operations; add parameters
     initEClass(smartImporterTaskEClass, SmartImporterTask.class, "SmartImporterTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSmartImporterTask_SourceLocators(), theResourcesPackage.getSourceLocator(), null, "sourceLocators", null, 1, -1, SmartImporterTask.class,
-        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSmartImporterTask_SourceLocators(), theResourcesPackage.getSourceLocator(), null, "sourceLocators", null, 1, -1, SmartImporterTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
-    createResource("https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/Importer-1.0.ecore");
+    createResource("https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/SmartImporter.ecore");
 
     // Create annotations
     // http://www.eclipse.org/emf/2002/Ecore
@@ -208,7 +201,7 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
     createEnablementAnnotations();
     // http://www.eclipse.org/oomph/setup/ValidTriggers
     createValidTriggersAnnotations();
-    // http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+    // http://org/eclipse/emf/ecore/util/ExtendedMetaData
     createExtendedMetaDataAnnotations();
   }
 
@@ -220,9 +213,14 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
    */
   protected void createEcoreAnnotations()
   {
-    String source = "http://www.eclipse.org/emf/2002/Ecore";
-    addAnnotation(this, source, new String[] { "schemaLocation",
-        "https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/Importer-1.0.ecore" });
+    String source = "http://www.eclipse.org/emf/2002/Ecore";	
+    addAnnotation
+      (this, 
+       source, 
+       new String[] 
+       {
+       "schemaLocation", "https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/SmartImporter.ecore"
+       });
   }
 
   /**
@@ -233,9 +231,43 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
    */
   protected void createEnablementAnnotations()
   {
-    String source = "http://www.eclipse.org/oomph/setup/Enablement";
-    addAnnotation(smartImporterTaskEClass, source, new String[] { "variableName", "p2.smart.importer", "repository",
-        "http://download.eclipse.org/oomph/smart/importer/updates", "installableUnits", "org.eclipse.oomph.smart.importer.feature.group" });
+    String source = "http://www.eclipse.org/oomph/setup/Enablement";	
+    addAnnotation
+      (this, 
+       source, 
+       new String[] 
+       {
+       "variableName", "p2.smart.importer",
+       "repository", "http://update-site.bonitasoft.com/oomph/",
+       "installableUnits", "org.eclipse.oomph.smart.importer.feature.group"
+       });	
+    addAnnotation
+      (this, 
+       source, 
+       new String[] 
+       {
+       "variableName", "setup.projectset.p2",
+       "repository", "http://update-site.bonitasoft.com/oomph/",
+       "installableUnits", "org.eclipse.oomph.smart.importer.feature.group"
+       });	
+    addAnnotation
+      (this, 
+       source, 
+       new String[] 
+       {
+       "variableName", "setup.projectset.p2",
+       "repository", "http://download.eclipse.org/e4/snapshots/org.eclipse.e4.ui",
+       "installableUnits", "org.eclipse.e4.ui.importer org.eclipse.e4.ui.importer.java"
+       });	
+    addAnnotation
+      (this, 
+       source, 
+       new String[] 
+       {
+       "variableName", "setup.projectset.p2",
+       "repository", "http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-playground_master/",
+       "installableUnits", "org.jboss.tools.playground.easymport.maven"
+       });
   }
 
   /**
@@ -246,20 +278,32 @@ public class SmartImporterPackageImpl extends EPackageImpl implements SmartImpor
    */
   protected void createValidTriggersAnnotations()
   {
-    String source = "http://www.eclipse.org/oomph/setup/ValidTriggers";
-    addAnnotation(smartImporterTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
+    String source = "http://www.eclipse.org/oomph/setup/ValidTriggers";	
+    addAnnotation
+      (smartImporterTaskEClass, 
+       source, 
+       new String[] 
+       {
+       "triggers", "STARTUP MANUAL"
+       });
   }
 
   /**
-   * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+   * Initializes the annotations for <b>http://org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   protected void createExtendedMetaDataAnnotations()
   {
-    String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
-    addAnnotation(getSmartImporterTask_SourceLocators(), source, new String[] { "name", "sourceLocator" });
+    String source = "http://org/eclipse/emf/ecore/util/ExtendedMetaData";	
+    addAnnotation
+      (getSmartImporterTask_SourceLocators(), 
+       source, 
+       new String[] 
+       {
+       "name", "sourceLocator"
+       });
   }
 
-} // SmartImporterPackageImpl
+} //ImporterPackageImpl

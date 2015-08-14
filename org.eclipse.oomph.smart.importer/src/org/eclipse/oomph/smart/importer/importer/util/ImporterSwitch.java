@@ -1,15 +1,17 @@
 /**
  */
-package org.eclipse.oomph.smart.importer.util;
-
-import org.eclipse.oomph.base.ModelElement;
-import org.eclipse.oomph.setup.SetupTask;
-import org.eclipse.oomph.smart.importer.SmartImporterPackage;
-import org.eclipse.oomph.smart.importer.SmartImporterTask;
+package org.eclipse.oomph.smart.importer.importer.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
+
+import org.eclipse.oomph.base.ModelElement;
+
+import org.eclipse.oomph.setup.SetupTask;
+
+import org.eclipse.oomph.smart.importer.importer.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +23,10 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see org.eclipse.oomph.smart.importer.SmartImporterPackage
+ * @see org.eclipse.oomph.smart.importer.importer.ImporterPackage
  * @generated
  */
-public class SmartImporterSwitch<T> extends Switch<T>
+public class ImporterSwitch<T> extends Switch<T>
 {
   /**
    * The cached model package
@@ -32,7 +34,7 @@ public class SmartImporterSwitch<T> extends Switch<T>
    * <!-- end-user-doc -->
    * @generated
    */
-  protected static SmartImporterPackage modelPackage;
+  protected static ImporterPackage modelPackage;
 
   /**
    * Creates an instance of the switch.
@@ -40,11 +42,11 @@ public class SmartImporterSwitch<T> extends Switch<T>
    * <!-- end-user-doc -->
    * @generated
    */
-  public SmartImporterSwitch()
+  public ImporterSwitch()
   {
     if (modelPackage == null)
     {
-      modelPackage = SmartImporterPackage.eINSTANCE;
+      modelPackage = ImporterPackage.eINSTANCE;
     }
   }
 
@@ -74,37 +76,27 @@ public class SmartImporterSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-    case SmartImporterPackage.SMART_IMPORTER_TASK:
-    {
-      SmartImporterTask smartImporterTask = (SmartImporterTask)theEObject;
-      T result = caseSmartImporterTask(smartImporterTask);
-      if (result == null)
+      case ImporterPackage.SMART_IMPORTER_TASK:
       {
-        result = caseSetupTask(smartImporterTask);
+        SmartImporterTask smartImporterTask = (SmartImporterTask)theEObject;
+        T result = caseSmartImporterTask(smartImporterTask);
+        if (result == null) result = caseSetupTask(smartImporterTask);
+        if (result == null) result = caseModelElement(smartImporterTask);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
       }
-      if (result == null)
-      {
-        result = caseModelElement(smartImporterTask);
-      }
-      if (result == null)
-      {
-        result = defaultCase(theEObject);
-      }
-      return result;
-    }
-    default:
-      return defaultCase(theEObject);
+      default: return defaultCase(theEObject);
     }
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Task</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Smart Importer Task</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Task</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Smart Importer Task</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
@@ -162,4 +154,4 @@ public class SmartImporterSwitch<T> extends Switch<T>
     return null;
   }
 
-} // SmartImporterSwitch
+} //ImporterSwitch
