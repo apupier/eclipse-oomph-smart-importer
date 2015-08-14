@@ -192,7 +192,7 @@ public class ImporterPackageImpl extends EPackageImpl implements ImporterPackage
     initEReference(getSmartImporterTask_SourceLocators(), theResourcesPackage.getSourceLocator(), null, "sourceLocators", null, 1, -1, SmartImporterTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
-    createResource("https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/SmartImporter.ecore");
+    createResource("SmartImporter.ecore");
 
     // Create annotations
     // http://www.eclipse.org/emf/2002/Ecore
@@ -219,7 +219,7 @@ public class ImporterPackageImpl extends EPackageImpl implements ImporterPackage
        source, 
        new String[] 
        {
-       "schemaLocation", "https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/SmartImporter.ecore"
+       "schemaLocation", "SmartImporter.ecore"
        });
   }
 

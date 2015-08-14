@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.eclipse.oomph.smart.importer.importer.ImporterFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/SmartImporter.ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='SmartImporter.ecore'"
  *        annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.smart.importer' repository='http://update-site.bonitasoft.com/oomph/' installableUnits='org.eclipse.oomph.smart.importer.feature.group'"
  *        annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='setup.projectset.p2' repository='http://update-site.bonitasoft.com/oomph/' installableUnits='org.eclipse.oomph.smart.importer.feature.group'"
  *        annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='setup.projectset.p2' repository='http://download.eclipse.org/e4/snapshots/org.eclipse.e4.ui' installableUnits='org.eclipse.e4.ui.importer org.eclipse.e4.ui.importer.java'"

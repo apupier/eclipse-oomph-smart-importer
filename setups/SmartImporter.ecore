@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="importer" nsURI="http://www.eclipse.org/oomph/smart/importer/1.0"
     nsPrefix="org.eclipse.oomph.smart.importer">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-    <details key="schemaLocation" value="https://raw.githubusercontent.com/apupier/eclipse-oomph-smart-importer/master/org.eclipse.oomph.smart.importer/model/SmartImporter.ecore"/>
+    <details key="schemaLocation" value="SmartImporter.ecore"/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
     <details key="variableName" value="p2.smart.importer"/>
