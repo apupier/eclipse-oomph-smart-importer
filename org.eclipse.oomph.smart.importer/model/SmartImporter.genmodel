@@ -7,7 +7,7 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>SmartImporter.ecore</foreignModel>
   <genPackages prefix="Importer" basePackage="org.eclipse.oomph.smart.importer" disposableProviderFactory="true"
-      childCreationExtenders="true" ecorePackage="SmartImporter.ecore#/">
+      childCreationExtenders="true" ecorePackage="SmartImporter.ecore#/" publicationLocation="eclipse-oomph-smart-importer/setups/SmartImporter.ecore">
     <genClasses ecoreClass="SmartImporter.ecore#//SmartImporterTask">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartImporter.ecore#//SmartImporterTask/sourceLocators"/>
     </genClasses>

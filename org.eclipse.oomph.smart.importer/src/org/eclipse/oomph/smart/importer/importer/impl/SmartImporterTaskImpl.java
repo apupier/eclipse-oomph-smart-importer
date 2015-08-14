@@ -93,8 +93,8 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     switch (featureID)
     {
-    case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
-      return ((InternalEList<?>)getSourceLocators()).basicRemove(otherEnd, msgs);
+      case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+        return ((InternalEList<?>)getSourceLocators()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -109,8 +109,8 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     switch (featureID)
     {
-    case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
-      return getSourceLocators();
+      case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+        return getSourceLocators();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -126,10 +126,10 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     switch (featureID)
     {
-    case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
-      getSourceLocators().clear();
-      getSourceLocators().addAll((Collection<? extends SourceLocator>)newValue);
-      return;
+      case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+        getSourceLocators().clear();
+        getSourceLocators().addAll((Collection<? extends SourceLocator>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -144,9 +144,9 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     switch (featureID)
     {
-    case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
-      getSourceLocators().clear();
-      return;
+      case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+        getSourceLocators().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -161,8 +161,8 @@ public class SmartImporterTaskImpl extends SetupTaskImpl implements SmartImporte
   {
     switch (featureID)
     {
-    case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
-      return sourceLocators != null && !sourceLocators.isEmpty();
+      case ImporterPackage.SMART_IMPORTER_TASK__SOURCE_LOCATORS:
+        return sourceLocators != null && !sourceLocators.isEmpty();
     }
     return super.eIsSet(featureID);
   }
